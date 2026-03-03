@@ -40,12 +40,11 @@ src/
 ├── App.jsx               
 ├── App.css               
 ├── index.css             
-├── Loader.jsx            Tela de carregamento animada.
-├── IntroScroller.jsx     Cena das montanhas animada.
-├── Portfolio.jsx         Monta o site inteiro.
+├── Loader.jsx            
+├── IntroScroller.jsx     
+├── Portfolio.jsx         
 │
-├── assets/              Arquivos estáticos (imagens, ícones).
-│
+├── assets/              
 ├── components/
 │   ├── layout/ Rodapé e Barra de navegação do topo.
 │   │   ├── Header.jsx    
