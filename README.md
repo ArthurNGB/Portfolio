@@ -60,7 +60,7 @@ src/
 │       ├── ProjectCard.jsx
 │       ├── ExpItem.jsx
 │       └── ContactBox.jsx
-└── data/                 Conteúdo do site (dados, informações, traduções e etc..)
+└── data/                 Conteúdo do site (dados, informações, traduções)
     ├── experiences.js    
     ├── projects.js       
     ├── skills.js         
