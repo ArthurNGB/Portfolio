@@ -44,7 +44,8 @@ src/
 ├── IntroScroller.jsx     
 ├── Portfolio.jsx         
 │
-├── assets/              
+├── assets/ Ícones e imagens.
+|             
 ├── components/
 │   ├── layout/ Rodapé e Barra de navegação do topo.
 │   │   ├── Header.jsx    
