@@ -18,6 +18,7 @@ O objetivo deste projeto é desenvolver um website de portfólio profissional pa
 | **Animação (UI)** | Framer Motion | Micro-interações e transições de componentes |
 | **Estilização** | Tailwind CSS | Estilização utilitária e responsividade |
 | **Iconografia** | Lucide React | Ícones vetoriais leves e escaláveis |
+| **Hospedagem** | Vercel | Deploy do projeto |
 
 ---
 
@@ -107,6 +108,8 @@ npm run dev
 ```
 
 A aplicação estará disponível em: [http://localhost:5173](https://www.google.com/search?q=http://localhost:5173)
+
+Link para acesso no Vercel: [https://portfolio-topaz-xi-86.vercel.app/](https://www.google.com/search?q=http://portfolio-topaz-xi-86.vercel.app)
 
 ---
 
