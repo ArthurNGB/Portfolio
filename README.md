@@ -107,9 +107,9 @@ npm run dev
 
 ```
 
-A aplicação estará disponível em: [http://localhost:5173](https://www.google.com/search?q=http://localhost:5173)
+A aplicação estará disponível em: [http://localhost:5173](http://localhost:5173)
 
-Link para acesso no Vercel: [https://portfolio-topaz-xi-86.vercel.app/](https://www.google.com/search?q=http://portfolio-topaz-xi-86.vercel.app)
+Link para acesso no Vercel: [https://portfolio-topaz-xi-86.vercel.app](http://portfolio-topaz-xi-86.vercel.app)
 
 ---
 
