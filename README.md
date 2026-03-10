@@ -111,6 +111,9 @@ A aplicação estará disponível em: [http://localhost:5173](http://localhost:5
 
 Link para acesso no Vercel: [https://portfolio-topaz-xi-86.vercel.app](http://portfolio-topaz-xi-86.vercel.app)
 
+![Funcionamento no Vercel](https://imgur.com/a/Ap9haht.gif)
+
+
 ---
 
 ## 📄 Licença
