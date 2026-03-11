@@ -6,15 +6,15 @@ export const i18n = {
     headline1: "Desenvolvedor",
     headline2: "Full Stack.",
     heroBio:
-      "Apaixonado por construir sistemas robustos e escaláveis com Java e Spring Boot. Mais de 4 anos transformando ideias em arquiteturas sólidas.",
+      "Apaixonado por construir sistemas robustos e escaláveis com Java e Spring Boot. Mais de 2 anos transformando ideias em arquiteturas sólidas.",
     heroCta: "Contato",
     aboutNum: "01.",
     aboutTitle: "Minha trajetória",
     aboutBio:
       "Comecei minha jornada na programação com Java e desde então me especializei em desenvolvimento backend com Spring Boot, microsserviços e bancos de dados relacionais. Trabalhei em projetos desafiadores que me levaram a dominar Docker, AWS e pipelines de CI/CD. Hoje entrego soluções full stack com foco em alta performance e escalabilidade.",
-    stat1: "15+",
+    stat1: "6+",
     stat1Label: "Projetos Back-end",
-    stat2: "+4",
+    stat2: "+2",
     stat2Label: "Anos de Foco",
     skillsTitle: "Arsenal Principal",
     expNum: "02.",

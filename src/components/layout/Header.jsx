@@ -28,7 +28,7 @@ const Header = ({
         {/* Logo */}
         <div className="font-mono text-xl font-bold flex items-center gap-1">
           <span className="text-neutral-500">&lt;</span>
-          <span className="text-samurai-gold">Dev</span>
+          <span className="text-samurai-gold">Arthur</span>
           <span className="text-neutral-500">/&gt;</span>
         </div>
 

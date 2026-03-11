@@ -43,7 +43,7 @@ const Home = ({ isLightMode, t, fadeUp }) => (
           </a>
           <div className="flex gap-4 items-center px-2">
             <a
-              href="#"
+              href="https://github.com/ArthurNGB"
               className={`transition-colors ${
                 isLightMode
                   ? "text-neutral-500 hover:text-samurai-gold"
@@ -53,7 +53,7 @@ const Home = ({ isLightMode, t, fadeUp }) => (
               <Github size={22} />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/arthur-nunes-2259772a3/"
               className={`transition-colors ${
                 isLightMode
                   ? "text-neutral-500 hover:text-samurai-gold"
