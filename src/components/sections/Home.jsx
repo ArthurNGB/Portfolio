@@ -1,12 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Github, Linkedin, ChevronRight, Code2 } from "lucide-react";
+import SplineScene from "../spline/SplineScene";
 
 const Home = ({ isLightMode, t, fadeUp }) => (
   <section
     id="home"
     className="min-h-[90vh] flex items-center relative overflow-hidden pt-20"
   >
+    <SplineScene />
     {/* Glow de fundo */}
     <div
       className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] blur-[120px] rounded-full pointer-events-none ${
@@ -14,7 +16,7 @@ const Home = ({ isLightMode, t, fadeUp }) => (
       }`}
     />
 
-    <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10 w-full">
+    <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10 w-full" style={{ pointerEvents: 'none' }}>
       {/* Texto */}
       <motion.div initial="hidden" animate="visible" variants={fadeUp}>
         <div className="font-mono text-samurai-gold mb-4 flex items-center gap-2 text-sm">
@@ -36,6 +38,7 @@ const Home = ({ isLightMode, t, fadeUp }) => (
         </p>
         <div className="flex gap-4 flex-wrap">
           <a
+            style={{ pointerEvents: 'auto' }}
             href="#contato"
             className="bg-samurai-gold text-black px-8 py-4 font-bold uppercase tracking-wider text-sm hover:bg-yellow-500 transition-colors flex items-center gap-2 shadow-[0_4px_15px_rgba(212,175,55,0.3)]"
           >
@@ -43,6 +46,7 @@ const Home = ({ isLightMode, t, fadeUp }) => (
           </a>
           <div className="flex gap-4 items-center px-2">
             <a
+              style={{ pointerEvents: 'auto' }}
               href="https://github.com/ArthurNGB"
               className={`transition-colors ${
                 isLightMode
@@ -52,7 +56,8 @@ const Home = ({ isLightMode, t, fadeUp }) => (
             >
               <Github size={22} />
             </a>
-            <a
+            <a 
+              style={{ pointerEvents: 'auto' }}
               href="https://www.linkedin.com/in/arthur-nunes-2259772a3/"
               className={`transition-colors ${
                 isLightMode
