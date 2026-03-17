@@ -5,7 +5,7 @@ export const i18n = {
     introSub: "ao meu portfólio",
     introDevPre: "Desenvolvedor ",
     introDevPost: "",
-    introExpNum: "+4",
+    introExpNum: "+2",
     introExpText: "Anos de Experiência",
     introScroll: "Role para baixo",
 
@@ -20,9 +20,9 @@ export const i18n = {
     aboutNum: "01.",
     aboutTitle: "Minha trajetória",
     aboutBio:
-      "Comecei minha jornada na programação com Java e desde então me especializei em desenvolvimento backend com Spring Boot, microsserviços e bancos de dados relacionais. Trabalhei em projetos desafiadores que me levaram a dominar Docker, AWS e pipelines de CI/CD. Hoje entrego soluções full stack com foco em alta performance e escalabilidade.",
+      "Comecei minha jornada na programação com Java e desde então me especializei em desenvolvimento backend com Spring Boot, microsserviços e bancos de dados relacionais. Trabalhei em projetos desafiadores que me levaram a dominar várias ferramentas e tecnologias. Hoje entrego soluções full stack com foco em alta performance e escalabilidade.",
     stat1: "6+",
-    stat1Label: "Projetos Back-end",
+    stat1Label: "Projetos finalizados",
     stat2: "+2",
     stat2Label: "Anos de Foco",
     skillsTitle: "Arsenal Principal",

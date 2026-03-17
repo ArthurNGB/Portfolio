@@ -199,8 +199,8 @@ const Contact = ({ isLightMode, t, fadeUp }) => {
               </div>
 
               <div className="space-y-3 max-w-md">
-                <ContactBox icon={Mail}   value="[ LOREM@IPSUM.COM ]"    isLightMode={isLightMode} />
-                <ContactBox icon={MapPin} value="[ LOREM IPSUM, LOREM ]" isLightMode={isLightMode} />
+                <ContactBox icon={Mail}   value="[ arthurnunesgontijo1@gmail.com ]"    isLightMode={isLightMode} />
+                <ContactBox icon={MapPin} value="[ Belo Horizonte, MG ]" isLightMode={isLightMode} />
               </div>
 
               <div className="flex gap-3">

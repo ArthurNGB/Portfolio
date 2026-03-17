@@ -48,16 +48,26 @@ const ProjectCard = ({ isLightMode, project, lang }) => {
                   : "bg-neutral-900 border-neutral-800"
               }`}
             >
-              <Terminal
-                size={40}
-                className="text-neutral-500 group-hover:scale-110 transition-transform duration-500"
-              />
-              <span className="absolute top-3 left-3 font-mono text-xs text-samurai-gold border border-samurai-gold/30 px-2 py-0.5 bg-samurai-gold/10 font-bold">
+              {/* Renderiza o GIF se existir, senão usa o Terminal */}
+              {project.thumbnail ? (
+                <img
+                  src={project.thumbnail}
+                  alt={`Thumbnail de ${project.title[lang]}`}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              ) : (
+                <Terminal
+                  size={40}
+                  className="text-neutral-500 group-hover:scale-110 transition-transform duration-500"
+                />
+              )}
+
+              <span className="absolute top-3 left-3 font-mono text-xs text-samurai-gold border border-samurai-gold/30 px-2 py-0.5 bg-samurai-gold/10 font-bold z-20">
                 {project.year}
               </span>
+              
               {/* Hover overlay */}
-              <div className="absolute inset-0 bg-black/80 flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                {/* Lendo o link de DEMO dinamicamente */}
+              <div className="absolute inset-0 bg-black/80 flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
                 <a
                   href={project.links.demo} 
                   target="_blank"
@@ -66,7 +76,6 @@ const ProjectCard = ({ isLightMode, project, lang }) => {
                 >
                   <ExternalLink size={18} />
                 </a>
-                {/* Lendo o link do GITHUB dinamicamente */}
                 <a
                   href={project.links.github} 
                   target="_blank"

@@ -2,46 +2,46 @@ export const CERTIFICATIONS = [
   {
     year: "2024",
     title: {
-      pt: "Desenvolvimento Web Full Stack",
-      en: "Full Stack Web Development",
+      pt: "Inglês Avançado — Proficiência",
+      en: "Advanced English — Proficiency",
     },
-    issuer: "Rocketseat",
-    credentialId: "RS-2024-001",
-    link: "https://rocketseat.com.br",
-    tags: ["React", "Node.js", "TypeScript"],
+    issuer: "EF SET", // Substitua pela instituição real (ex: Cambridge, Cultura Inglesa, etc)
+    credentialId: "ENG-2024-B2",
+    link: "https://www.efset.org/",
+    tags: ["Inglês", "Comunicação", "B2 Upper Intermediate"],
     description: {
-      pt: "Formação completa em desenvolvimento web moderno, cobrindo front-end com React e back-end com Node.js, TypeScript e bancos de dados relacionais e não-relacionais.",
-      en: "Complete training in modern web development, covering front-end with React and back-end with Node.js, TypeScript, and relational and non-relational databases.",
-    },
-  },
-  {
-    year: "2024",
-    title: {
-      pt: "Java e Spring Boot — Microsserviços",
-      en: "Java & Spring Boot — Microservices",
-    },
-    issuer: "Alura",
-    credentialId: "ALR-2024-042",
-    link: "https://alura.com.br",
-    tags: ["Java", "Spring Boot", "Docker"],
-    description: {
-      pt: "Certificação em arquitetura de microsserviços com Java e Spring Boot, incluindo containerização com Docker e orquestração com Kubernetes.",
-      en: "Certification in microservices architecture with Java and Spring Boot, including containerization with Docker and orchestration with Kubernetes.",
+      pt: "Certificação de proficiência em língua inglesa, atestando capacidade de leitura, escuta e comunicação clara em ambientes profissionais e técnicos.",
+      en: "English language proficiency certification, proving the ability to read, listen, and communicate clearly in professional and technical environments.",
     },
   },
   {
     year: "2023",
     title: {
-      pt: "Fundamentos de Cloud Computing — AWS",
-      en: "Cloud Computing Fundamentals — AWS",
+      pt: "Desenvolvimento de APIs RESTful com Spring Boot",
+      en: "RESTful API Development with Spring Boot",
     },
-    issuer: "Amazon Web Services",
-    credentialId: "AWS-CLF-2023",
-    link: "https://aws.amazon.com/certification",
-    tags: ["AWS", "Cloud", "DevOps"],
+    issuer: "Udemy", // Substitua pela plataforma onde fez o curso (ex: Alura, Udemy)
+    credentialId: "UC-SPRING-001",
+    link: "https://www.udemy.com/", // Link para o seu certificado
+    tags: ["Java", "Spring Boot", "API REST", "Backend"],
     description: {
-      pt: "Certificação AWS Cloud Practitioner, abrangendo conceitos fundamentais de computação em nuvem, segurança, arquitetura e faturamento na AWS.",
-      en: "AWS Cloud Practitioner certification, covering fundamental concepts of cloud computing, security, architecture, and billing on AWS.",
+      pt: "Curso completo focado na construção de APIs robustas e escaláveis utilizando Java e o ecossistema Spring (Spring Boot, Spring Data JPA e Spring Security).",
+      en: "Comprehensive course focused on building robust and scalable APIs using Java and the Spring ecosystem (Spring Boot, Spring Data JPA, and Spring Security).",
+    },
+  },
+  {
+    year: "2023",
+    title: {
+      pt: "ReactJS — Construindo Interfaces Modernas",
+      en: "ReactJS — Building Modern Interfaces",
+    },
+    issuer: "Rocketseat", // Substitua pela plataforma real
+    credentialId: "RS-REACT-002",
+    link: "https://rocketseat.com.br", // Link para o seu certificado
+    tags: ["React", "JavaScript", "Frontend", "Hooks"],
+    description: {
+      pt: "Especialização no desenvolvimento de SPAs (Single Page Applications) dinâmicas, utilizando componentes funcionais, gerenciamento de estado e consumo de APIs.",
+      en: "Specialization in developing dynamic SPAs (Single Page Applications), using functional components, state management, and API consumption.",
     },
   },
 ];
