@@ -15,7 +15,7 @@ export const i18n = {
     headline1: "Desenvolvedor",
     headline2: "Full Stack.",
     heroBio:
-      "Apaixonado por construir sistemas robustos e escaláveis com Java e Spring Boot. Mais de 2 anos transformando ideias em arquiteturas sólidas.",
+            "Atuo com desenvolvimento backend em Java e Spring Boot, criando APIs bem estruturadas e escaláveis. Focado em código limpo e arquitetura consistente.",   
     heroCta: "Contato",
     aboutNum: "01.",
     aboutTitle: "Minha trajetória",
@@ -64,15 +64,15 @@ export const i18n = {
     headline1: "Full Stack",
     headline2: "Developer.",
     heroBio:
-      "Passionate about building robust and scalable systems with Java and Spring Boot. Over 4 years turning ideas into solid architectures.",
+      "I work with backend development using Java and Spring Boot, building well-structured and scalable APIs. Focused on clean code and consistent architecture.",
     heroCta: "Contact",
     aboutNum: "01.",
     aboutTitle: "My Journey",
     aboutBio:
-      "I started my programming journey with Java and since then I have specialized in backend development with Spring Boot, microservices and relational databases. I worked on challenging projects that led me to master Docker, AWS and CI/CD pipelines. Today I deliver full stack solutions focused on high performance and scalability.",
-    stat1: "15+",
+      "I started my programming journey with Java and have been focusing on backend development using Spring Boot and MySQL. I have experience building REST APIs and applying architectural patterns such as MVC. I'm continuously learning and improving my skills by working on practical projects.",
+    stat1: "3+",
     stat1Label: "Backend Projects",
-    stat2: "+4",
+    stat2: "+2",
     stat2Label: "Years of Focus",
     skillsTitle: "Main Arsenal",
     certNum: "02.",

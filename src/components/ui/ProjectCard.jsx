@@ -69,7 +69,7 @@ const ProjectCard = ({ isLightMode, project, lang }) => {
               {/* Hover overlay */}
               <div className="absolute inset-0 bg-black/80 flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
                 <a
-                  href={project.links.demo} 
+                  href={project.links.demo}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-samurai-gold text-black rounded-full flex items-center justify-center hover:scale-110 transition-transform"
@@ -77,7 +77,7 @@ const ProjectCard = ({ isLightMode, project, lang }) => {
                   <ExternalLink size={18} />
                 </a>
                 <a
-                  href={project.links.github} 
+                  href={project.links.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-neutral-800 text-white rounded-full flex items-center justify-center hover:bg-neutral-700 transition-colors"
