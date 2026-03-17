@@ -1,7 +1,8 @@
 // 1. Importe as imagens aqui em cima (ajuste o caminho se necessário)
 import thumbLucioCosta from '../assets/thumbnails/Video Project 2.gif';
 import thumbApptite from '../assets/thumbnails/Video Project 3.gif';
-import thumbRoomB from '../assets/thumbnails/WhatsApp Image 2026-03-17 at 15.56.01.jpeg'
+import thumbRoomB from '../assets/thumbnails/WhatsApp Image 2026-03-17 at 15.56.01.jpeg';
+
 
 export const PROJECTS = [
   {
@@ -37,7 +38,7 @@ export const PROJECTS = [
   {
     year: "2025",
     title: { pt: "RoomBookings", en: "RoomBookings" },
-    thumbnail: thumbRoomB, // Deixe vazio ou null se não tiver
+    thumbnail: thumbRoomB, 
     description: {
       pt: "Sistema para gerenciamento de cadastro de reservas de salas de reunião.",
       en: "System for managing meeting room reservations.",
