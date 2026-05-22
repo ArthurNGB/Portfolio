@@ -1,27 +1,18 @@
-import React, { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence, useMotionValue, useSpring, useTransform, useInView } from "framer-motion";
+import React, { useState, useRef } from "react";
+import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Mail, MapPin, Github, Linkedin, ArrowRight, CheckCircle, AlertCircle } from "lucide-react";
 import ContactBox from "../ui/ContactBox";
 import emailjs from '@emailjs/browser';
 
+const EMAILJS_CONFIG = {
+  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+};
+
 // Componente customizado para os Inputs
 const AnimatedInputField = ({ value, onChange, placeholder, isLightMode, type = "text", rows, error, maxLength }) => {
   const [isFocused, setIsFocused] = useState(false);
-  const [animKey, setAnimKey] = useState(0);
-  
-  const containerRef = useRef(null);
-  const isInView = useInView(containerRef, { once: true, margin: "-50px" });
-
-  useEffect(() => {
-    if (isInView) {
-      setAnimKey((prev) => prev + 1);
-      const interval = setInterval(() => {
-        setAnimKey((prev) => prev + 1);
-      }, 10000);
-      return () => clearInterval(interval);
-    }
-  }, [isInView]);
-
   const showPlaceholder = !value && !isFocused;
   const cleanPlaceholder = placeholder.replace(/^\/\s*/, "");
 
@@ -34,13 +25,15 @@ const AnimatedInputField = ({ value, onChange, placeholder, isLightMode, type = 
   const placeholderColor = isLightMode ? "text-neutral-500" : "text-neutral-500";
 
   return (
-    <div ref={containerRef} className="relative">
+    <div className="relative">
       {rows ? (
         <textarea
           value={value}
           onChange={onChange}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
+          aria-label={cleanPlaceholder}
+          aria-invalid={Boolean(error)}
           rows={rows}
           maxLength={maxLength}
           className={`${inputClasses} resize-none`}
@@ -52,6 +45,8 @@ const AnimatedInputField = ({ value, onChange, placeholder, isLightMode, type = 
           onChange={onChange}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
+          aria-label={cleanPlaceholder}
+          aria-invalid={Boolean(error)}
           maxLength={maxLength}
           className={inputClasses}
         />
@@ -59,17 +54,14 @@ const AnimatedInputField = ({ value, onChange, placeholder, isLightMode, type = 
 
       {/* Placeholder Animado */}
       <div
-        key={animKey}
         className={`absolute left-4 top-4 pointer-events-none font-mono text-xs md:text-sm font-bold tracking-widest flex ${placeholderColor} transition-opacity duration-200 z-0 ${
           showPlaceholder ? "opacity-100" : "opacity-0"
         }`}
       >
         {cleanPlaceholder.split("").map((char, index) => (
           <motion.span
-            key={`${animKey}-${index}`}
-            initial={{ opacity: 0, y: 2 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.03 + 0.1, duration: 0.3 }}
+            key={`${cleanPlaceholder}-${index}`}
+            initial={false}
           >
             {char === " " ? "\u00A0" : char}
           </motion.span>
@@ -83,6 +75,11 @@ const Contact = ({ isLightMode, t, fadeUp }) => {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [errors, setErrors] = useState({});
   const [formStatus, setFormStatus] = useState("idle");
+  const isEmailConfigured = Boolean(
+    EMAILJS_CONFIG.serviceId &&
+    EMAILJS_CONFIG.templateId &&
+    EMAILJS_CONFIG.publicKey
+  );
 
   const formRef = useRef(null);
   const x = useMotionValue(0);
@@ -119,6 +116,12 @@ const Contact = ({ isLightMode, t, fadeUp }) => {
     const errs = validate();
     if (Object.keys(errs).length) { setErrors(errs); return; }
     setErrors({});
+
+    if (!isEmailConfigured) {
+      setFormStatus("error");
+      setTimeout(() => setFormStatus("idle"), 5000);
+      return;
+    }
     
     setFormStatus("sending"); 
 
@@ -130,20 +133,24 @@ const Contact = ({ isLightMode, t, fadeUp }) => {
     };
 
     emailjs.send(
-      'service_sv7wnz8',    // Service ID do site
-      'template_ivy211k',   // Template ID do site
+      EMAILJS_CONFIG.serviceId,
+      EMAILJS_CONFIG.templateId,
       templateParams,
-      'Qo8PUmT4EnfoCbfsv'     // Public Key
+      {
+        publicKey: EMAILJS_CONFIG.publicKey,
+        limitRate: {
+          id: "portfolio-contact-form",
+          throttle: 10000,
+        },
+      }
     )
-    .then((response) => {
-      console.log('E-mail enviado com sucesso!', response.status, response.text);
+    .then(() => {
       setFormStatus("success");
       setForm({ name: "", email: "", subject: "", message: "" }); 
       
       setTimeout(() => setFormStatus("idle"), 5000); 
     })
-    .catch((error) => {
-      console.log('Falha ao enviar e-mail...', error);
+    .catch(() => {
       setFormStatus("error"); 
       
       setTimeout(() => setFormStatus("idle"), 5000);

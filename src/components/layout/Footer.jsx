@@ -18,6 +18,7 @@ const Footer = ({ isLightMode, t }) => (
           href="https://github.com/ArthurNGB"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={t.githubLabel}
           className="text-neutral-500 hover:text-samurai-gold transition-colors"
         >
           <Github size={18} />
@@ -26,6 +27,7 @@ const Footer = ({ isLightMode, t }) => (
           href="https://www.linkedin.com/in/arthur-nunes-2259772a3/"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={t.linkedinLabel}
           className="text-neutral-500 hover:text-samurai-gold transition-colors"
         >
           <Linkedin size={18} />

@@ -1,18 +1,12 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import { motion } from "framer-motion";
 import { Github, Linkedin, ChevronRight, Code2 } from "lucide-react";
-
-const LazySplineScene = lazy(() => import('../spline/SplineScene'));
 
 const Home = ({ isLightMode, t, fadeUp }) => (
   <section
     id="home"
     className="min-h-[90vh] flex items-center relative overflow-hidden pt-20"
     >
-
-    <Suspense fallback={<div className="loading-state">Loading 3D Experience...</div>}>
-      <LazySplineScene />
-    </Suspense>
 
     {/* Glow de fundo */}
     <div
@@ -53,6 +47,9 @@ const Home = ({ isLightMode, t, fadeUp }) => (
             <a
               style={{ pointerEvents: 'auto' }}
               href="https://github.com/ArthurNGB"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t.githubLabel}
               className={`transition-colors ${
                 isLightMode
                   ? "text-neutral-500 hover:text-samurai-gold"
@@ -64,6 +61,9 @@ const Home = ({ isLightMode, t, fadeUp }) => (
             <a 
               style={{ pointerEvents: 'auto' }}
               href="https://www.linkedin.com/in/arthur-nunes-2259772a3/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t.linkedinLabel}
               className={`transition-colors ${
                 isLightMode
                   ? "text-neutral-500 hover:text-samurai-gold"

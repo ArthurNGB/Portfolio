@@ -7,6 +7,7 @@ import Header         from "./components/layout/Header";
 import Footer         from "./components/layout/Footer";
 import Home           from "./components/sections/Home";
 import About          from "./components/sections/About";
+import Experience     from "./components/sections/Experience";
 import Certifications from "./components/sections/Certifications";
 import Projects       from "./components/sections/Projects";
 import Contact        from "./components/sections/Contact";
@@ -34,9 +35,9 @@ function useActiveSection(sectionIds) {
   return [activeSection, setActiveSection];
 }
 
-const SECTION_IDS = ["home", "sobre", "certificacoes", "projetos", "contato"];
+const SECTION_IDS = ["home", "sobre", "experiencia", "certificacoes", "projetos", "contato"];
 
-export const fadeUp = {
+const fadeUp = {
   hidden:  { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
@@ -68,6 +69,7 @@ const Portfolio = () => {
       <main className={`relative z-10 ${isLightMode ? "bg-[#f0f0f0]" : "bg-samurai-dark"}`}>
         <Home           isLightMode={isLightMode} t={t} fadeUp={fadeUp} />
         <About          isLightMode={isLightMode} t={t} fadeUp={fadeUp} />
+        <Experience     isLightMode={isLightMode} t={t} lang={lang} fadeUp={fadeUp} />
         <Certifications isLightMode={isLightMode} t={t} lang={lang} fadeUp={fadeUp} />
         <Projects       isLightMode={isLightMode} t={t} lang={lang} fadeUp={fadeUp} />
         <Contact        isLightMode={isLightMode} t={t} fadeUp={fadeUp} />

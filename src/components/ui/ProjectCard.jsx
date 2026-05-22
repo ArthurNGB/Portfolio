@@ -2,8 +2,10 @@ import React, { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Terminal, ExternalLink, Github } from "lucide-react";
 
-const ProjectCard = ({ isLightMode, project, lang }) => {
+const ProjectCard = ({ isLightMode, project, lang, loadMedia = true }) => {
   const cardRef = useRef(null);
+  const projectTitle = project.title[lang];
+  const hasDemo = Boolean(project.links.demo);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const mouseXSpring = useSpring(x);
@@ -49,10 +51,12 @@ const ProjectCard = ({ isLightMode, project, lang }) => {
               }`}
             >
               {/* Renderiza o GIF se existir, senão usa o Terminal */}
-              {project.thumbnail ? (
+              {project.thumbnail && loadMedia ? (
                 <img
                   src={project.thumbnail}
-                  alt={`Thumbnail de ${project.title[lang]}`}
+                  alt={`Thumbnail de ${projectTitle}`}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               ) : (
@@ -68,18 +72,22 @@ const ProjectCard = ({ isLightMode, project, lang }) => {
               
               {/* Hover overlay */}
               <div className="absolute inset-0 bg-black/80 flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
-                <a
-                  href={project.links.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-samurai-gold text-black rounded-full flex items-center justify-center hover:scale-110 transition-transform"
-                >
-                  <ExternalLink size={18} />
-                </a>
+                {hasDemo && (
+                  <a
+                    href={project.links.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Abrir demo de ${projectTitle}`}
+                    className="w-10 h-10 bg-samurai-gold text-black rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+                  >
+                    <ExternalLink size={18} />
+                  </a>
+                )}
                 <a
                   href={project.links.github}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`Abrir repositório de ${projectTitle}`}
                   className="w-10 h-10 bg-neutral-800 text-white rounded-full flex items-center justify-center hover:bg-neutral-700 transition-colors"
                 >
                   <Github size={18} />
@@ -88,7 +96,7 @@ const ProjectCard = ({ isLightMode, project, lang }) => {
             </div>
 
             <h3 className="font-serif font-bold text-2xl mb-2 group-hover:text-samurai-gold transition-colors">
-              {project.title[lang]}
+              {projectTitle}
             </h3>
             <p
               className={`text-sm line-clamp-3 ${

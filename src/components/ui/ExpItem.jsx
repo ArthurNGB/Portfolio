@@ -11,7 +11,7 @@ const ExpItem = ({ item, isLightMode, lang, t, isLast }) => {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="relative pl-10 md:pl-16 mb-12 group"
+      className={`relative pl-10 md:pl-16 group ${isLast ? "mb-0" : "mb-12"}`}
     >
       {/* Dot na timeline */}
       <div
@@ -77,7 +77,9 @@ const ExpItem = ({ item, isLightMode, lang, t, isLast }) => {
 
         {/* Botão expandir */}
         <button
+          type="button"
           onClick={() => setOpen(!open)}
+          aria-expanded={open}
           className="flex items-center gap-2 text-xs font-mono font-bold text-samurai-gold hover:text-yellow-500 transition-colors uppercase tracking-widest mt-2 relative z-10"
         >
           {open ? t.seeLess : t.seeMore}

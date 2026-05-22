@@ -49,7 +49,9 @@ const Projects = ({ isLightMode, t, lang, fadeUp }) => {
           >
             {/* Botão Anterior */}
             <button
+              type="button"
               onClick={prevSlide}
+              aria-label={lang === "pt" ? "Projeto anterior" : "Previous project"}
               className={`absolute left-0 md:left-4 z-20 p-4 rounded-full border transition-all hover:scale-110 ${
                 isLightMode 
                   ? "bg-white border-[#d4d4d4] text-neutral-800 hover:text-samurai-gold shadow-lg" 
@@ -104,6 +106,7 @@ const Projects = ({ isLightMode, t, lang, fadeUp }) => {
                           isLightMode={isLightMode}
                           project={project}
                           lang={lang}
+                          loadMedia={isActive}
                         />
                       </div>
                     </motion.div>
@@ -114,7 +117,9 @@ const Projects = ({ isLightMode, t, lang, fadeUp }) => {
 
             {/* Botão Próximo */}
             <button
+              type="button"
               onClick={nextSlide}
+              aria-label={lang === "pt" ? "Próximo projeto" : "Next project"}
               className={`absolute right-0 md:right-4 z-20 p-4 rounded-full border transition-all hover:scale-110 ${
                 isLightMode 
                   ? "bg-white border-[#d4d4d4] text-neutral-800 hover:text-samurai-gold shadow-lg" 
@@ -128,8 +133,15 @@ const Projects = ({ isLightMode, t, lang, fadeUp }) => {
             <div className="flex gap-3 mt-6 z-20">
               {PROJECTS.map((_, i) => (
                 <button
+                  type="button"
                   key={i}
                   onClick={() => setCurrentIndex(i)}
+                  aria-label={
+                    lang === "pt"
+                      ? `Ir para o projeto ${i + 1}`
+                      : `Go to project ${i + 1}`
+                  }
+                  aria-current={i === currentIndex ? "true" : undefined}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     i === currentIndex
                       ? "bg-samurai-gold scale-125 shadow-[0_0_10px_#D4AF37]"

@@ -64,10 +64,13 @@ const Header = ({
             onMouseLeave={() => setIsHoveringSettings(false)}
           >
             <button
+              type="button"
               onClick={() => {
                 setSettingsOpen(!settingsOpen);
                 setIsHoveringSettings(false); // Esconde a tooltip ao clicar
               }}
+              aria-label={lang === "pt" ? "Abrir configurações" : "Open settings"}
+              aria-expanded={settingsOpen}
               className={`p-2 rounded-full border transition-all flex items-center justify-center relative z-10 ${
                 settingsOpen
                   ? "border-samurai-gold text-samurai-gold bg-samurai-gold/10"
@@ -115,14 +118,18 @@ const Header = ({
                     </span>
                     <div className={`flex rounded-md p-1 border gap-1 ${isLightMode ? "bg-black/5 border-black/10" : "bg-white/5 border-white/10"}`}>
                       <button
+                        type="button"
                         onClick={() => setLang("pt")}
+                        aria-pressed={lang === "pt"}
                         className={`flex-1 flex items-center justify-center gap-2 text-xs font-bold py-1.5 rounded-sm transition-colors ${lang === "pt" ? "bg-samurai-gold text-black" : "text-neutral-500 hover:text-samurai-gold"}`}
                       >
                         <img src="https://flagcdn.com/w20/br.png" alt="Brasil" className="w-4 h-3 object-cover rounded-[2px]" />
                         PT
                       </button>
                       <button
+                        type="button"
                         onClick={() => setLang("en")}
+                        aria-pressed={lang === "en"}
                         className={`flex-1 flex items-center justify-center gap-2 text-xs font-bold py-1.5 rounded-sm transition-colors ${lang === "en" ? "bg-samurai-gold text-black" : "text-neutral-500 hover:text-samurai-gold"}`}
                       >
                         <img src="https://flagcdn.com/w20/us.png" alt="USA" className="w-4 h-3 object-cover rounded-[2px]" />
@@ -137,7 +144,9 @@ const Header = ({
                       {lang === "pt" ? "Tema" : "Theme"}
                     </span>
                     <button
+                      type="button"
                       onClick={() => setIsLightMode(!isLightMode)}
+                      aria-pressed={isLightMode}
                       className={`w-full flex items-center justify-between px-3 py-2 text-xs font-bold rounded-md border transition-colors ${
                         isLightMode
                           ? "border-black/10 hover:border-samurai-gold text-neutral-700 bg-black/5"
@@ -161,7 +170,10 @@ const Header = ({
         {/* Mobile buttons */}
         <div className="flex md:hidden items-center">
           <button
+            type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label={mobileOpen ? (lang === "pt" ? "Fechar menu" : "Close menu") : (lang === "pt" ? "Abrir menu" : "Open menu")}
+            aria-expanded={mobileOpen}
             className="text-samurai-gold p-2"
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -213,14 +225,18 @@ const Header = ({
                 {/* Mobile Language Toggle */}
                 <div className={`flex rounded-md p-1 border gap-1 w-full sm:w-auto ${isLightMode ? "bg-black/5 border-black/10" : "bg-white/5 border-white/10"}`}>
                   <button
+                    type="button"
                     onClick={() => setLang("pt")}
+                    aria-pressed={lang === "pt"}
                     className={`flex-1 sm:px-6 flex items-center justify-center gap-2 text-xs font-bold py-2 rounded-sm transition-colors ${lang === "pt" ? "bg-samurai-gold text-black" : "hover:text-samurai-gold"}`}
                   >
                     <img src="https://flagcdn.com/w20/br.png" alt="Brasil" className="w-4 h-3 object-cover rounded-[2px]" />
                     PT
                   </button>
                   <button
+                    type="button"
                     onClick={() => setLang("en")}
+                    aria-pressed={lang === "en"}
                     className={`flex-1 sm:px-6 flex items-center justify-center gap-2 text-xs font-bold py-2 rounded-sm transition-colors ${lang === "en" ? "bg-samurai-gold text-black" : "hover:text-samurai-gold"}`}
                   >
                     <img src="https://flagcdn.com/w20/us.png" alt="USA" className="w-4 h-3 object-cover rounded-[2px]" />
@@ -230,7 +246,9 @@ const Header = ({
 
                 {/* Mobile Theme Toggle */}
                 <button
+                  type="button"
                   onClick={() => setIsLightMode(!isLightMode)}
+                  aria-pressed={isLightMode}
                   className={`flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-2 text-xs font-bold rounded-md border transition-colors ${
                     isLightMode
                       ? "border-black/10 hover:border-samurai-gold bg-black/5"
